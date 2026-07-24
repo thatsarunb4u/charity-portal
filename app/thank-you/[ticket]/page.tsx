@@ -67,7 +67,7 @@ export default async function ThankYouPage({
               <div className="space-y-4">
 
                 <div className="flex justify-between">
-                  <span>Ticket Number</span>
+                  <span>Booking Id</span>
                   <strong>{order.ticket_number}</strong>
                 </div>
 

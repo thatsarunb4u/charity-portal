@@ -9,9 +9,18 @@ export async function POST(request: Request) {
 
     const body = await request.json();
 
-    const { name, phone, email, quantity } = body;
+    const { name, phone, email, dining_option, contact_consent, quantity } = body;
 
-    if (!name || !phone || !email || quantity <= 0) {
+    const isValidOrderOption = dining_option === "collect_for_self" || dining_option === "donate";
+
+    if (
+        typeof name !== "string" || !name.trim() ||
+        typeof phone !== "string" || !phone.trim() ||
+        typeof email !== "string" || !email.trim() ||
+        !isValidOrderOption ||
+        typeof contact_consent !== "boolean" ||
+        !Number.isInteger(quantity) || quantity <= 0
+    ) {
 
         return NextResponse.json(
             { error: "Invalid data" },
@@ -57,6 +66,8 @@ const unitPrice = Number(settings.price);
     name,
     phone,
     email,
+    dining_option,
+    contact_consent,
     quantity,
     unit_price: unitPrice,
     amount: quantity * unitPrice,

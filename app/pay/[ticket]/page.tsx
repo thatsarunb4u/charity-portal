@@ -75,7 +75,7 @@ Order Summary
 
 <div className="flex justify-between">
 
-<span>Ticket</span>
+<span>Booking Id</span>
 
 <b>{order.ticket_number}</b>
 
