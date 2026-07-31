@@ -1,5 +1,6 @@
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
@@ -33,11 +34,15 @@ export default async function ThankYouPage({
 
         <div className="overflow-hidden rounded-3xl bg-white shadow-xl">
 
-          <img
-            src={settings.banner_url}
-            alt={settings.event_title}
-            className="h-64 w-full object-cover"
-          />
+          <div className="relative h-64 w-full">
+            <Image
+              src="/event-banner.jpeg"
+              alt="Nasi minyak served with curry ayam"
+              fill
+              sizes="(max-width: 1024px) 100vw, 896px"
+              className="object-cover object-center"
+            />
+          </div>
 
           <div className="p-8 text-center">
 
@@ -55,7 +60,7 @@ export default async function ThankYouPage({
 
             <p className="mt-2 text-slate-600">
               We have received your payment notification.
-              Our volunteers will verify your PayNow transaction shortly.
+              Our staffs will verify your PayNow transaction shortly.
             </p>
 
             <div className="mt-10 rounded-2xl bg-slate-50 p-6">
@@ -77,7 +82,7 @@ export default async function ThankYouPage({
                 </div>
 
                 <div className="flex justify-between">
-                  <span>Briyani</span>
+                  <span>Nasi Minyak Ayam Korma</span>
                   <strong>{order.quantity}</strong>
                 </div>
 
@@ -106,9 +111,9 @@ export default async function ThankYouPage({
               </h3>
 
               <ol className="list-decimal space-y-2 pl-5 text-slate-700">
-                <li>Our volunteers will verify your PayNow payment.</li>
-                <li>Keep your ticket number for briyani collection.</li>
-                <li>Please present this ticket when collecting your order.</li>
+                <li>Our staffs will verify your PayNow payment.</li>
+                <li>You will receive a confirmation message of your payment.</li>
+                <li>Please bring that along for collection.</li>
               </ol>
 
             </div>

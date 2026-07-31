@@ -248,9 +248,8 @@ font-bold
                         Terms &amp; Conditions
                     </h3>
                     <ul className="mt-3 list-disc space-y-1 pl-5">
-                        <li>Orders are subject to availability.</li>
-                        <li>If you selected collect for self, keep your ticket number and present it when collecting your order.</li>
-                        <li>Verify the PayNow amount and payment reference before confirming payment.</li>
+                        <li>If you selected collect for self, bring screenshot of confirmation message from us and present it when collecting your order.</li>
+                        <li>Verify Paynow UEN: S73MQ0059EMOS, amount and payment reference before confirming payment.</li>
                         <li>Contact the masjid if you need help with your order.</li>
                     </ul>
                 </section>
@@ -260,7 +259,7 @@ font-bold
                     disabled={loading}
                     className="w-full rounded-xl bg-green-600 py-4 text-xl font-bold text-white disabled:bg-gray-400 hover:bg-green-700"
                 >
-                    {loading ? "Generating..." : "Generate PayNow QR"}
+                    {loading ? "Generating Paynow QR..." : "Proceed to Payment"}
                 </button>
 
             </form>

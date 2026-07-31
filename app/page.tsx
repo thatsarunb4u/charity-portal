@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import OrderForm from "@/components/OrderForm";
 import SectionCard from "@/components/SectionCard";
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
+import Image from "next/image";
 
 export default async function Home() {
 
@@ -17,15 +18,16 @@ export default async function Home() {
 
             <SectionCard>
 
-                <img
-                    src={data.banner_url}
-                    className="
-                    h-72
-                    w-full
-                    rounded-xl
-                    object-cover
-                    "
-                />
+                <div className="relative h-72 w-full overflow-hidden rounded-xl">
+                    <Image
+                        src="/event-banner.jpeg"
+                        alt="Briyani served with rice and curry"
+                        fill
+                        preload
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                        className="object-cover object-center"
+                    />
+                </div>
 
                 <div className="mt-8">
 

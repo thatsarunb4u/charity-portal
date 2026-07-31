@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
-  title: "Charity Portal",
-  description: "Briyani Charity Portal",
+  title: "Masjid Omar Salmah Charity Portal",
+  description: "Masjid Omar Salmah Charity Portal",
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@ import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import { generatePayNowQR } from "@/lib/paynow";
 import { notFound } from "next/navigation";
 import PaymentButton from "@/components/PaymentButton";
+import Image from "next/image";
 
 export default async function PayPage({
   params,
@@ -40,10 +41,15 @@ export default async function PayPage({
 
 <div className="rounded-3xl bg-white shadow-xl overflow-hidden">
 
-<img
-    src={settings.banner_url}
-    className="h-64 w-full object-cover"
-/>
+<div className="relative h-64 w-full">
+  <Image
+    src="/event-banner.jpeg"
+    alt="Briyani served with rice and curry"
+    fill
+    sizes="(max-width: 1024px) 100vw, 896px"
+    className="object-cover object-center"
+  />
+</div>
 
 <div className="p-8">
 
@@ -120,7 +126,7 @@ ${Number(order.amount).toFixed(2)}
   <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-slate-700">
     <li>Scan the QR code using your banking app.</li>
     <li>Do not change the payment reference.</li>
-    <li>Verify the amount before confirming payment.</li>
+    <li>Verify UEN (S73MQ0059EMOS) and amount before confirming payment.</li>
     <li>After payment, click "I've Completed Payment".</li>
   </ul>
 </div>

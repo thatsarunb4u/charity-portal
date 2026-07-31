@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabaseAdmin";
 
 function generateTicket(no: number) {
-    return `BR-${new Date().getFullYear()}-${String(no).padStart(6,"0")}`;
+    return `MN-${new Date().getFullYear()}-${String(no).padStart(6,"0")}`;
 }
 
 export async function POST(request: Request) {
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
 
     const year = new Date().getFullYear();
 
-    return `BR-${year}-${serial
+    return `MN-${year}-${serial
         .toString()
         .padStart(6,"0")}`;
 
