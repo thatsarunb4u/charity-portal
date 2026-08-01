@@ -88,7 +88,7 @@ const unitPrice = Number(settings.price);
 
     ticket_number:ticket,
 
-    payment_reference:ticket
+    payment_reference:`EAML-${ticket}`
 
 })
 .eq("id",order.id);

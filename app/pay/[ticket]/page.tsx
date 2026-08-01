@@ -31,7 +31,7 @@ export default async function PayPage({
     settings.paynow_uen,
     settings.merchant_name,
     Number(order.amount),
-    order.ticket_number
+    order.payment_reference
   );
 
   return (
@@ -145,7 +145,7 @@ PayNow Reference
 
 <p className="text-2xl font-bold">
 
-{order.ticket_number}
+{order.payment_reference}
 
 </p>
 
