@@ -16,6 +16,27 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Admin portal setup
+
+The protected order-management portal is available at `/admin`. It uses Supabase
+Authentication and is safe to expose publicly: only users assigned the `admin`
+role can read orders or verify payments.
+
+1. Apply `supabase/migrations/20260806000000_add_admin_roles.sql` in the
+   Supabase SQL Editor.
+2. Create the administrator's email/password user in **Supabase Dashboard →
+   Authentication → Users**.
+3. In the SQL Editor, grant that user the role (replace the email address):
+
+```sql
+INSERT INTO public.user_roles (user_id, role)
+SELECT id, 'admin'
+FROM auth.users
+WHERE email = 'admin@example.com';
+```
+
+Then visit `/admin/login` and sign in with that administrator account.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
