@@ -107,7 +107,7 @@ export default async function ThankYouPage({
             <div className="mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-6 text-left">
 
               <h3 className="mb-3 text-lg font-bold">
-                What's Next?
+                What’s Next?
               </h3>
 
               <ol className="list-decimal space-y-2 pl-5 text-slate-700">
@@ -115,6 +115,24 @@ export default async function ThankYouPage({
                 <li>You will receive a confirmation message of your payment.</li>
                 <li>Please bring that along for collection.</li>
               </ol>
+
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-green-200 bg-green-50 p-6 text-left">
+
+              <h3 className="mb-3 text-lg font-bold text-green-900">
+                Collection Details
+              </h3>
+
+              <div className="space-y-2 text-green-900">
+                <p>
+                  <strong>Time:</strong> 6:00 PM to 9:30 PM
+                </p>
+
+                <p>
+                  <strong>Location:</strong> Istana Ballroom
+                </p>
+              </div>
 
             </div>
 
